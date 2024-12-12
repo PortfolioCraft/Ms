@@ -20,6 +20,12 @@
                 <img src="https://res.cloudinary.com/vistaprint/images/c_scale,w_448,h_448,dpr_2/f_auto,q_auto/v1705580343/ideas-and-advice-prod/en-us/adidas/adidas.png?_i=AA" alt="Logo">
                 <span>Logo</span>
             </div>
+            <!-- Toggle Button -->
+            <div class="toggle-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -88,8 +94,8 @@
             <div class="image-container" id="image-container"></div>
         </div>
         <div class="right-content">
-            <h2 style="color: white;">Word of the Week</h2>
-            <p style="color: white;">
+            <h2 style="color: white; text-align: center;">Word of the Week</h2>
+            <p style="color: white; text-align: center;">
                 "The Lord is my shepherd; I shall not want." <br> 
                 <span class="verse">— Psalm 23:1</span>
             </p>
@@ -504,6 +510,14 @@ style="
 </p>
 </footer>
 
+<script>
+    const toggleButton = document.querySelector('.toggle-button');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggleButton.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
     
 <script>
     // Array of royalty-free flower image URLs from Pexels (works in all browsers)
