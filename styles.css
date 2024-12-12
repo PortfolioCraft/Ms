@@ -12,7 +12,6 @@ body {
     background-color: #98CFCC;
 }
 
-
 /* Navbar */
 .navbar {
     position: absolute;
@@ -44,6 +43,7 @@ body {
 .navbar .nav-links {
     list-style: none;
     display: flex;
+    transition: all 0.3s ease-in-out;
 }
 
 .navbar .nav-links li {
@@ -58,6 +58,42 @@ body {
 
 .navbar .nav-links li a:hover {
     text-decoration: underline;
+}
+
+/* Toggle Button */
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle-button span {
+    background-color: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+}
+
+/* Media Queries for Small Screens */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 50px;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
 }
 
 /* Banner */
