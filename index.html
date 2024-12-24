@@ -68,7 +68,6 @@
     
     .banner .overlay {
         position: absolute;
-                background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
         top: 0;
         left: 0;
         width: 100%;
@@ -421,8 +420,8 @@
         <div class="card">
             <img src="images\Crowned Precious-Jewel (1).png" alt="Card Image 2">
             <div class="card-content">
-                <h2 style=" font-family: EB Garamond, serif;">Crowned Precious Jewel</h2>
-                <p style="font-family: Cabin, sans-serif"> Mentorship for the youth, guiding and equipping them to be women of grace and virtue
+                <h2 style=" font-family: EB Garamond, serif;">Crowned Precious Jewels</h2>
+                <p style="font-family: Cabin, sans-serif"> Mentorship for the Heart, Soul, Spirit, and Body
                 </p>
                 <a href="cpj.html">
                     <button>Learn More</button>
@@ -489,7 +488,14 @@ Start Your Journey!</h1>
     </section>
 
 
+   
+    <h1 class="pam-main-heading" style="color: white; font-size: 30px;text-align: center;">Coming Soon: Explore Our Book Collection!</h1>
+
+    <p class="pam-core-message" style="color: white; text-align: center;">Our carefully curated collection of books will be available shortly. Stay tuned for updates!</p>
+
+
     <div class="content-wrapper">
+       
         <div class="image-grid">
           <div class="image-container">
             <img class="content-image" src="images/first.jpg" alt="Image 1">
@@ -563,6 +569,42 @@ Start Your Journey!</h1>
             gap: 10px;
           }
         }
+
+        @media (max-width: 768px) {
+    .image-container {
+      display: none; /* Hide all image containers by default on small screens */
+    }
+
+    .image-container:nth-child(2) {
+      display: block; /* Only show the second image container */
+      max-width: 100%; /* Limit the image container's width */
+      margin: 0 auto 20px; /* Add space below the image container */
+      text-align: center; /* Center the caption */
+    }
+
+    .content-image {
+      width: 100%; /* Make the image responsive */
+      max-width: 400px; /* Set a maximum width to prevent it from being too large */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px; /* Keep the border-radius for a polished look */
+      object-fit: cover; /* Ensure the image looks neat */
+    }
+
+    .image-grid {
+      display: flex;
+      justify-content: center; /* Center the single visible image container */
+      align-items: center;
+    }
+
+    .content-wrapper {
+      height: auto; /* Allow the content-wrapper to adjust to the content */
+      padding: 20px; /* Add some padding for spacing */
+    }
+
+    .contact-form {
+      margin-top: 60px; /* Add extra space above the contact form */
+    }
+  }
       </style>
       
       
