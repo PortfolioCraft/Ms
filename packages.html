@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Packages Page</title>
+    <title>Responsive Navbar</title>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -22,7 +22,6 @@
             padding: 15px 30px;
             background-color: #C5411A;
             color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
@@ -84,6 +83,10 @@
         }
 
         @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
             .nav-links {
                 display: none; /* Hide links by default */
                 flex-direction: column;
@@ -99,63 +102,10 @@
             .nav-links.active {
                 display: flex; /* Show links when active */
             }
-
-            .menu-toggle {
-                display: flex;
-            }
-        }
-
-        /* Page Container */
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .heading {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #1e293b;
-        }
-
-        /* Packages Section */
-        .packages {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background-color: #C5411A;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            color: white;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 1rem;
-            line-height: 1.5;
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
             <img src="images/logo-removebg-preview.png" alt="Logo">
@@ -174,37 +124,9 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->
     <div class="container">
-        <h1 class="heading">Our Packages</h1>
-        <div class="packages">
-            <div class="card">
-                <h3>Basic Package</h3>
-                <p>Includes essential features to get started. Perfect for small-scale needs and beginners.</p>
-            </div>
-            <div class="card">
-                <h3>Standard Package</h3>
-                <p>A well-rounded package with additional features for growing requirements and enhanced usability.</p>
-            </div>
-            <div class="card">
-                <h3>Premium Package</h3>
-                <p>Advanced tools and capabilities for professionals seeking top-notch performance.</p>
-            </div>
-            <div class="card">
-                <h3>Ultimate Package</h3>
-                <p>The complete solution for large-scale projects, including all premium features and custom support.</p>
-            </div>
-        </div>
+        <h1 class="heading">Responsive Navbar Example</h1>
     </div>
-
-    <footer style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 30px 20px; background-color: #98CFCC;">
-        <p style="font-size: 18px; margin-bottom: 20px; color: #555;">Subscribe to our newsletter for the latest updates</p>
-        <form style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-bottom: 20px; width: 100%; max-width: 600px;">
-            <input type="email" placeholder="Enter your email" style="flex: 1; padding: 10px; font-size: 16px; border: 2px solid #C5411A; border-radius: 5px;" required />
-            <button type="submit" style="padding: 10px 20px; font-size: 16px; border: none; background-color: #C5411A; color: white; text-transform: uppercase; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;">Subscribe</button>
-        </form>
-        <p style="font-size: 14px; color: black; margin-top: 10px;">© 2024 Pamela-Tendayi Mangoma. All rights reserved.</p>
-    </footer>
 
     <script>
         function toggleMenu() {
