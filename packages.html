@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navbar</title>
+    <title>Packages Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -32,7 +32,7 @@
         }
 
         .navbar .logo img {
-            height: 80px;
+            height: 50px;
             width: auto;
         }
 
@@ -42,80 +42,187 @@
             letter-spacing: 1px;
         }
 
-        .navbar .nav-links {
+        .nav-links {
             list-style: none;
             display: flex;
             gap: 20px;
         }
 
-        .navbar .nav-links li {
+        .nav-links li {
             display: inline;
         }
 
-        .navbar .nav-links a {
+        .nav-links a {
             text-decoration: none;
             color: white;
             font-size: 1rem;
             transition: color 0.3s ease;
         }
 
-        .navbar .nav-links a:hover {
+        .nav-links a:hover {
             color: #ff7f50;
         }
 
         /* Mobile Menu Styles */
         .menu-toggle {
             display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            color: white;
-            font-size: 1.5rem;
         }
 
-        .menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 4px 0;
+        .menu-toggle-label {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: white;
         }
 
         @media (max-width: 768px) {
             .menu-toggle {
-                display: flex;
+                display: block;
+            }
+
+            .menu-toggle-label {
+                display: block;
             }
 
             .nav-links {
-                display: none; /* Hide links by default */
+                display: none;
                 flex-direction: column;
                 background-color: #C5411A;
                 position: absolute;
                 top: 100%;
                 right: 0;
                 left: 0;
-                padding: 15px 30px;
                 text-align: center;
+                padding: 15px 0;
             }
 
-            .nav-links.active {
-                display: flex; /* Show links when active */
+            .menu-toggle:checked ~ .nav-links {
+                display: flex;
+							 color: #C5411A;
             }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+        }
+
+        /* Page Container */
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        /* Packages Section */
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #C5411A;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #98CFCC;
+        }
+
+        .footer p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #C5411A;
+            border-radius: 5px;
+        }
+
+        .newsletter-form button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #C5411A;
+            color: white;
+            text-transform: uppercase;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #FA8E46;
+        }
+
+        .footer .copyright {
+            font-size: 14px;
+            color: black;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
             <img src="images/logo-removebg-preview.png" alt="Logo">
-            <span>Brand</span>
+            
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <!-- Toggle Icon -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-toggle-label">☰</label>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#about">About</a></li>
@@ -124,15 +231,37 @@
         </ul>
     </nav>
 
+    <!-- Main Content -->
     <div class="container">
-        <h1 class="heading">Responsive Navbar Example</h1>
+        <h1 class="heading">Our Packages</h1>
+        <div class="packages">
+            <div class="card">
+                <h3>Basic Package</h3>
+                <p>Includes essential features to get started. Perfect for small-scale needs and beginners.</p>
+            </div>
+            <div class="card">
+                <h3>Standard Package</h3>
+                <p>A well-rounded package with additional features for growing requirements and enhanced usability.</p>
+            </div>
+            <div class="card">
+                <h3>Premium Package</h3>
+                <p>Advanced tools and capabilities for professionals seeking top-notch performance.</p>
+            </div>
+            <div class="card">
+                <h3>Ultimate Package</h3>
+                <p>The complete solution for large-scale projects, including all premium features and custom support.</p>
+            </div>
+        </div>
     </div>
 
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Subscribe to our newsletter for the latest updates</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <p class="copyright">&copy; 2024 Pamela-Tendayi Mangoma. All rights reserved.</p>
+    </footer>
 </body>
 </html>
