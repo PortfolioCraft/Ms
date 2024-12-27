@@ -20,9 +20,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 30px;
-            background-color: #C5411A; /* Dark slate blue color */
+            background-color: #C5411A;
             color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
         .navbar .logo {
@@ -60,7 +61,48 @@
         }
 
         .navbar .nav-links a:hover {
-            color: #ff7f50; /* Coral color */
+            color: #ff7f50;
+        }
+
+        /* Mobile Menu Styles */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #C5411A;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                left: 0;
+                padding: 15px 30px;
+                text-align: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
         }
 
         /* Page Container */
@@ -87,7 +129,7 @@
         }
 
         .card {
-            background-color: #C5411A; /* Slate Gray */
+            background-color: #C5411A;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -116,7 +158,13 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <img src="images\logo-removebg-preview.png" alt="Logo">
+            <img src="images/logo-removebg-preview.png" alt="Logo">
+            <span>Brand</span>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -150,78 +198,39 @@
     </div>
 
     <footer 
-class="footer" 
-style="
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    padding: 30px 20px; 
-    background-color: #98CFCC;"
->
-<!-- Newsletter Text -->
-<p 
-    style="
-        font-size: 18px; 
-        margin-bottom: 20px; 
-        color: #555;"
->
-    Subscribe to our newsletter for the latest updates
-</p>
+        class="footer" 
+        style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 30px 20px; background-color: #98CFCC;">
+        <p style="font-size: 18px; margin-bottom: 20px; color: #555;">
+            Subscribe to our newsletter for the latest updates
+        </p>
+        <form 
+            class="newsletter-form" 
+            style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin-bottom: 20px; width: 100%; max-width: 600px;">
+            <input 
+                type="email" 
+                placeholder="Enter your email" 
+                style="flex: 1; padding: 10px; font-size: 16px; border: 2px solid #C5411A; border-radius: 5px;"
+                required
+            />
+            <button 
+                type="submit" 
+                style="padding: 10px 20px; font-size: 16px; border: none; background-color: #C5411A; color: white; text-transform: uppercase; border-radius: 5px; cursor: pointer; transition: background-color 0.3s;"
+                onmouseover="this.style.backgroundColor='#FA8E46';"
+                onmouseout="this.style.backgroundColor='#FA8E46';"
+            >
+                Subscribe
+            </button>
+        </form>
+        <p style="font-size: 14px; color: black; margin-top: 10px;">
+            © 2024 Pamela-Tendayi Mangoma. All rights reserved.
+        </p>
+    </footer>
 
-<!-- Newsletter Input Form -->
-<form 
-    class="newsletter-form" 
-    style="
-        display: flex; 
-        flex-wrap: wrap; 
-        justify-content: center; 
-        align-items: center; 
-        gap: 10px; 
-        margin-bottom: 20px; 
-        width: 100%; 
-        max-width: 600px;"
->
-    <input 
-        type="email" 
-        placeholder="Enter your email" 
-        style="
-            flex: 1; 
-            padding: 10px; 
-            font-size: 16px; 
-            border: 2px solid #C5411A; 
-            border-radius: 5px;"
-        required
-    />
-    <button 
-        type="submit" 
-        style="
-            padding: 10px 20px; 
-            font-size: 16px; 
-            border: none; 
-            background-color: #C5411A; 
-            color: white; 
-            text-transform: uppercase; 
-            border-radius: 5px; 
-            cursor: pointer; 
-            transition: background-color 0.3s;"
-        onmouseover="this.style.backgroundColor='#FA8E46';"
-        onmouseout="this.style.backgroundColor='#FA8E46';"
-    >
-        Subscribe
-    </button>
-</form>
-
-<!-- Copyright Text -->
-<p 
-    style="
-        font-size: 14px; 
-        color: black; 
-        margin-top: 10px;"
->
-© 2024 Pamela-Tendayi Mangoma . All rights reserved.
-</p>
-</footer>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
