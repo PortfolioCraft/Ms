@@ -629,7 +629,7 @@ Start Your Journey!</h1>
         background-color: #98CFCC; 
         padding: 20px;"
  id="contact">
-    <form 
+    <form   id="contact-form"
         class="contact-form" 
         style="
             width: 100%; 
@@ -652,7 +652,7 @@ Start Your Journey!</h1>
 >
     <h1 
         style="
-            font-size: 78px; 
+            font-size: 58px; 
             margin-bottom: 20px; 
             color: #333;"
     >
@@ -713,166 +713,211 @@ Let's Engage!    </h1>
        
     </div>
 
-   
+    <div class="button-container">
+      <button onclick="window.location.href='packages.html';" style="background-color: #C5411A;">
+          View Mentorship Packages
+      </button>
+  </div>
+  
+  <style>
+   .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Keeps it flexible for different sections */
+    text-align: center;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4a2c5e;
+    color: white;
+    border: none;
+    margin-bottom: 30px;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #72478a;
+}
+
+/* Maintain margin-bottom for small screens */
+@media (max-width: 768px) {
+    .button-container button {
+        margin-bottom: 100px; /* Keeps the margin consistent */
+    }
+}
+
+
+  </style>
+
 </div>
 
        
-        <!-- First Row -->
-        <div 
-            style="
-                display: flex; 
-                gap: 10px; 
-                margin-bottom: 15px;"
-        >
-            <div style="flex: 1;">
-                <label 
-                    for="first-name" 
-                    style="
-                        display: block; 
-                        font-size: 14px; 
-                        margin-bottom: 5px; 
-                        color: #555;"
-                >
-                    First Name
-                </label>
-                <input 
-                    type="text" 
-                    id="first-name" 
-                    name="first-name" 
-                    style="
-                        width: 100%; 
-                        padding: 10px; 
-                        font-size: 16px; 
-                        border: 2px solid #FA8E46; 
-                        border-radius: 5px;"
-                    required
-                />
-            </div>
-            <div style="flex: 1;">
-                <label 
-                    for="last-name" 
-                    style="
-                        display: block; 
-                        font-size: 14px; 
-                        margin-bottom: 5px; 
-                        color: #555;"
-                >
-                    Last Name
-                </label>
-                <input 
-                    type="text" 
-                    id="last-name" 
-                    name="last-name" 
-                    style="
-                        width: 100%; 
-                        padding: 10px; 
-                        font-size: 16px; 
-                        border: 2px solid #FA8E46; 
-                        border-radius: 5px;"
-                    required
-                />
-            </div>
-        </div>
-        <!-- Second Row -->
-        <div 
-            style="
-                display: flex; 
-                gap: 10px; 
-                margin-bottom: 15px;"
-        >
-            <div style="flex: 1;">
-                <label 
-                    for="email" 
-                    style="
-                        display: block; 
-                        font-size: 14px; 
-                        margin-bottom: 5px; 
-                        color: #555;"
-                >
-                    Email
-                </label>
-                <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    style="
-                        width: 100%; 
-                        padding: 10px; 
-                        font-size: 16px; 
-                        border: 2px solid #FA8E46; 
-                        border-radius: 5px;"
-                    required
-                />
-            </div>
-            <div style="flex: 1;">
-                <label 
-                    for="phone" 
-                    style="
-                        display: block; 
-                        font-size: 14px; 
-                        margin-bottom: 5px; 
-                        color: #555;"
-                >
-                    Phone
-                </label>
-                <input 
-                    type="tel" 
-                    id="phone" 
-                    name="phone" 
-                    style="
-                        width: 100%; 
-                        padding: 10px; 
-                        font-size: 16px; 
-                        border: 2px solid #FA8E46; 
-                        border-radius: 5px;"
-                />
-            </div>
-        </div>
-        <!-- Message Field -->
-        <div style="margin-bottom: 20px;">
-            <label 
-                for="message" 
-                style="
-                    display: block; 
-                    font-size: 14px; 
-                    margin-bottom: 5px; 
-                    color: #555;"
-            >
-                Message
-            </label>
-            <textarea 
-                id="message" 
-                name="message" 
-                rows="5" 
-                style="
-                    width: 100%; 
-                    padding: 10px; 
-                    font-size: 16px; 
-                    border: 2px solid #FA8E46; 
-                    border-radius: 5px;"
-                required
-            ></textarea>
-        </div>
-        <!-- Submit Button -->
-        <button 
-            type="submit" 
-            style="
-                width: 100%; 
-                padding: 10px; 
-                font-size: 16px; 
-                background-color: #FA8E46; 
-                color: white; 
-                border: none; 
-                border-radius: 5px; 
-                cursor: pointer; 
-                text-transform: uppercase; 
-                transition: background-color 0.3s;"
-            onmouseover="this.style.backgroundColor='#FA8E46';"
-            onmouseout="this.style.backgroundColor='#FA8E46';"
-        >
-            Submit
-        </button>
-    </form>
+<!-- First Row -->
+<div 
+style="
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 15px;"
+>
+<div style="flex: 1;">
+<label 
+    for="first-name" 
+    style="
+        display: block; 
+        font-size: 14px; 
+        margin-bottom: 5px; 
+        color: #555;"
+>
+  First Name
+</label>
+<input 
+    type="text" 
+    id="first-name" 
+    name="first-name" 
+    style="
+        width: 100%; 
+        padding: 10px; 
+        font-size: 16px; 
+        border: 2px solid #FA8E46; 
+        border-radius: 5px;"
+    required
+/>
+</div>
+<div style="flex: 1;">
+<label 
+    for="last-name" 
+    style="
+        display: block; 
+        font-size: 14px; 
+        margin-bottom: 5px; 
+        color: #555;"
+>
+  Last Name
+</label>
+<input 
+    type="text" 
+    id="last-name" 
+    name="last-name" 
+    style="
+        width: 100%; 
+        padding: 10px; 
+        font-size: 16px; 
+        border: 2px solid #FA8E46; 
+        border-radius: 5px;"
+    required
+/>
+</div>
+</div>
+
+<!-- Second Row -->
+<div 
+style="
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 15px;"
+>
+<div style="flex: 1;">
+<label 
+    for="email" 
+    style="
+        display: block; 
+        font-size: 14px; 
+        margin-bottom: 5px; 
+        color: #555;"
+>
+  Email
+</label>
+<input 
+    type="email" 
+    id="email" 
+    name="email" 
+    style="
+        width: 100%; 
+        padding: 10px; 
+        font-size: 16px; 
+        border: 2px solid #FA8E46; 
+        border-radius: 5px;"
+    required
+/>
+</div>
+<div style="flex: 1;">
+<label 
+    for="phone" 
+    style="
+        display: block; 
+        font-size: 14px; 
+        margin-bottom: 5px; 
+        color: #555;"
+>
+  Phone
+</label>
+<input 
+    type="tel" 
+    id="phone" 
+    name="phone" 
+    style="
+        width: 100%; 
+        padding: 10px; 
+        font-size: 16px; 
+        border: 2px solid #FA8E46; 
+        border-radius: 5px;"
+/>
+</div>
+</div>
+
+<!-- Message Field -->
+<div style="margin-bottom: 20px;">
+<label 
+  for="message" 
+  style="
+      display: block; 
+      font-size: 14px; 
+      margin-bottom: 5px; 
+      color: #555;"
+>
+Message
+</label>
+<textarea 
+  id="message" 
+  name="message" 
+  rows="5" 
+  style="
+      width: 100%; 
+      padding: 10px; 
+      font-size: 16px; 
+      border: 2px solid #FA8E46; 
+      border-radius: 5px;"
+  required
+></textarea>
+</div>
+
+<!-- Submit Button -->
+<button 
+type="submit" 
+style="
+    width: 100%; 
+    padding: 10px; 
+    font-size: 16px; 
+    background-color: #FA8E46; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    text-transform: uppercase; 
+    transition: background-color 0.3s;"
+>
+Submit
+</button>
+
+<!-- Feedback Messages -->
+<div id="feedback" style="margin-top: 20px; text-align: center; display: none;"></div>
+</form>
+
 </section>
 
 <footer 
@@ -898,6 +943,7 @@ style="
 
 <!-- Newsletter Input Form -->
 <form 
+    id="newsletter-form" 
     class="newsletter-form" 
     style="
         display: flex; 
@@ -911,6 +957,7 @@ style="
 >
     <input 
         type="email" 
+        id="newsletter-email"
         placeholder="Enter your email" 
         style="
             flex: 1; 
@@ -938,6 +985,8 @@ style="
         Subscribe
     </button>
 </form>
+<div id="newsletter-feedback" style="margin-top: 20px; text-align: center; display: none;"></div>
+
 
 <!-- Copyright Text -->
 <p 
@@ -949,6 +998,104 @@ style="
     © 2024 Pamela-Tendayi Mangoma . All rights reserved.
 </p>
 </footer>
+
+<script type="module">
+  // Firebase imports
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+  import { getDatabase, ref, set, push } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBKHYdJiw_cAIylFAesH6OjzOtrHP07j3c",
+    authDomain: "rita-aa67c.firebaseapp.com",
+    projectId: "rita-aa67c",
+    storageBucket: "rita-aa67c.firebasestorage.app",
+    messagingSenderId: "219155942076",
+    appId: "1:219155942076:web:eb9d04a8c26460c4addeb9",
+    measurementId: "G-9WH30VEJ74"
+  };
+
+  // Initialize Firebase and database
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+
+  console.log("Firebase initialized", app);
+
+  // Contact form submission
+  document.getElementById("contact-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    console.log("Contact form submitted");
+
+    const firstName = document.getElementById("first-name").value;
+    const lastName = document.getElementById("last-name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
+
+    try {
+      const userId = Math.floor(Math.random() * 1000000);
+      console.log("Sending contact data to database...");
+      await set(ref(database, "contacts/" + userId), {
+        firstName,
+        lastName,
+        email,
+        phone,
+        message,
+      });
+
+      console.log("Contact data sent successfully");
+
+      const feedback = document.getElementById("feedback");
+      feedback.style.display = "block";
+      feedback.style.color = "green";
+      feedback.textContent = "Your message has been sent successfully!";
+
+      setTimeout(() => {
+        feedback.style.display = "none";
+        document.getElementById("contact-form").reset();
+      }, 5000);
+    } catch (error) {
+      console.error("Error:", error);
+      const feedback = document.getElementById("feedback");
+      feedback.style.display = "block";
+      feedback.style.color = "red";
+      feedback.textContent = "An error occurred: " + error.message;
+    }
+  });
+
+  // Newsletter form submission
+  document.getElementById("newsletter-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    console.log("Newsletter form submitted");
+
+    const email = document.getElementById("newsletter-email").value;
+
+    try {
+      console.log("Sending newsletter email to database...");
+      await push(ref(database, "newsletter-emails"), { email });
+
+      console.log("Newsletter email sent successfully");
+
+      const feedback = document.getElementById("newsletter-feedback");
+      feedback.style.display = "block";
+      feedback.style.color = "green";
+      feedback.textContent = "You have successfully subscribed to the newsletter!";
+
+      setTimeout(() => {
+        feedback.style.display = "none";
+        document.getElementById("newsletter-form").reset();
+      }, 5000);
+    } catch (error) {
+      console.error("Error:", error);
+      const feedback = document.getElementById("newsletter-feedback");
+      feedback.style.display = "block";
+      feedback.style.color = "red";
+      feedback.textContent = "An error occurred: " + error.message;
+    }
+  });
+</script>
 
 <script>
     const toggleButton = document.querySelector('.toggle-button');
